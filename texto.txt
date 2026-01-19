@@ -1,107 +1,50 @@
-body {
-  font-family: Arial, sans-serif;
-  background: #f0f0f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Vaquinha Cívica</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.container {
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  width: 360px;
-  text-align: center;
-  box-shadow: 0 0 15px rgba(0,0,0,0.15);
-}
+  <div class="container">
+    <h1>✊ Vaquinha Cívica</h1>
 
-h1 {
-  margin-bottom: 10px;
-}
+    <p class="descricao">
+      Arrecadação simbólica para apoiar ações cívicas, informativas
+      e custos relacionados à mobilização democrática.
+    </p>
 
-.descricao {
-  font-size: 14px;
-  margin-bottom: 15px;
-}
+    <div class="info">
+      <p><strong>Meta:</strong> R$ 10.000,00</p>
+      <p><strong>Arrecadado:</strong> R$ <span id="arrecadado">0,00</span></p>
+    </div>
 
-.info p {
-  margin: 5px 0;
-}
+    <!-- Barra de progresso -->
+    <div class="progresso-container">
+      <div class="progresso-barra" id="progressoBarra"></div>
+    </div>
+    <p class="porcentagem" id="porcentagem">0% da meta atingida</p>
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 15px 0;
-}
+    <input type="number" id="valor" placeholder="Valor da contribuição (R$)">
+    <button onclick="doar()">Contribuir</button>
 
-button {
-  width: 100%;
-  padding: 10px;
-  background: #000;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+    <p class="pix">
+      💳 PIX: <span id="pixEmail">Renan.commercial1@gmail.com</span>
+    </p>
 
-button:hover {
-  background: #333;
-}
+    <button class="copiar" onclick="copiarPix()">📋 Copiar PIX</button>
 
-/* Barra de progresso */
-.progresso-container {
-  width: 100%;
-  height: 18px;
-  background: #ddd;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 10px;
-}
+<div class="qrcode-container">
+  <img id="qrcode" alt="QR Code PIX">
+  <p class="qrcode-text">Escaneie para pagar via PIX</p>
+</div>
 
-.progresso-barra {
-  height: 100%;
-  width: 0%;
-  background: #000;
-  transition: width 0.5s ease;
-}
+    <p class="aviso">
+      ⚠️ Esta é uma arrecadação de caráter simbólico e informativo.
+    </p>
+  </div>
 
-.porcentagem {
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-/* Botão copiar PIX */
-.copiar {
-  margin-top: 10px;
-  background: #e0e0e0;
-  color: #000;
-}
-
-.copiar:hover {
-  background: #d5d5d5;
-}
-
-.pix, .aviso {
-  margin-top: 12px;
-  font-size: 12px;
-  color: #555;
-}
-
-.qrcode-container {
-  margin-top: 15px;
-  text-align: center;
-}
-
-.qrcode-container img {
-  width: 180px;
-  height: 180px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-.qrcode-text {
-  font-size: 12px;
-  color: #555;
-  margin-top: 5px;
-}
+  <script src="script.js"></script>
+</body>
+</html>
